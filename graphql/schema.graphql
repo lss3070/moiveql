@@ -8,9 +8,33 @@
      language:String
      medium_cover_image:String!
  }
+type MovieDetail{
+      id: Int!
+      url: String,
+      imdb_code: String,
+      title: Int,
+      title_english: Int,
+      title_long: String,
+      slug: String,
+      year: Int,
+     rating: Float,
+      genres: Int
+}
+type MovieSuggest{
+
+       id: Int,
+        url: String,
+        imdb_code: String,
+        title: String,
+        title_english: String
+        title_long: String,
+        slug: String,
+}
 
  type Query{
      movies(limit:Int,rating:Float):[Movie]!
+      movie(id:Int):MovieDetail!
+       suggestions(id:Int):[MovieSuggest]!
  }
 # type Movie {
 #   id: Int!
