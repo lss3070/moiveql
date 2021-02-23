@@ -12,13 +12,16 @@ type MovieDetail{
       id: Int!
       url: String,
       imdb_code: String,
-      title: Int,
+      title: String,
       title_english: Int,
       title_long: String,
       slug: String,
       year: Int,
      rating: Float,
-      genres: Int
+      genres: Int,
+        language:String
+     medium_cover_image:String
+     description_intro:String
 }
 type MovieSuggest{
 
@@ -27,13 +30,14 @@ type MovieSuggest{
         imdb_code: String,
         title: String,
         title_english: String
-        title_long: String,
-        slug: String,
+        title_long: String
+        slug: String
+        medium_cover_image:String
 }
 
  type Query{
      movies(limit:Int,rating:Float):[Movie]!
-      movie(id:Int):MovieDetail!
+      movie(id:Int!):MovieDetail!
        suggestions(id:Int):[MovieSuggest]!
  }
 # type Movie {
